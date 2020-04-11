@@ -3,7 +3,7 @@
   eos_l3_interfaces:
     config:
       - ipv4:
-          - address: "{{ item.ip_address }}"/"{{ item.prefix }}"
+          - address: '"{{ item.ip_address }}"/"{{ item.prefix }}"'
         name: "{{ item.interface_type }}{{ item.interface_id }}"
     state: replaced
     

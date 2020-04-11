@@ -6,8 +6,8 @@
     parents: router ospf "{{ ospf.process_id }}"
     
 - name: OSPF NETWORKS
-  with_items: "{{ ospf.networks }}
+  with_items: "{{ ospf }}"
   eos_config:
     lines:
-      - network "{{ item }}" area "{{ospf.area }}"
+      - network "{{ item.networks }}" area "{{item.area }}"
     parents: router ospf "{{ ospf.process_id }}"
