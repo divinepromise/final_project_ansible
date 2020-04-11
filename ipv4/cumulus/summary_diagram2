@@ -1,0 +1,23 @@
+.
+├── cumulus-playbook.yml
+├── ansible.cfg
+├── backup
+│   ├── CUMULUS-SW1
+│   │   ├── daemons
+│   │   ├── frr.conf
+│   │   └── interfaces
+│   └── CUMULUS-SW2
+│       ├── daemons
+│       ├── frr.conf
+│       └── interfaces
+├── backup_playbook.yaml
+├── quagga_ospf_playbook.yaml
+├── inventory
+├── host_vars
+│   ├── CUMULUS-SW1.yml
+│   └── CUMULUS-SW2.yml
+├── interface_configuration-playbook.yml
+├── templates
+│   ├── ospf.j2
+│   └── interfaces.j2
+└── summary_diagram2

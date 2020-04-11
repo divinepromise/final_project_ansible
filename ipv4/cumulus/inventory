@@ -1,0 +1,24 @@
+[cumulus]
+CUMULUS-SW1
+CUMULUS-SW2
+
+[cumulus:vars]
+ansible_connection = network_cli
+ansible_network_os = eos
+ansible_user = admin
+ansible_become = yes
+ansible_become_method = enable
+
+[CUMULUS-SW1:vars]
+ansible_connection = network_cli
+ansible_network_os = eos
+ansible_user = admin
+ansible_become = yes
+ansible_become_method = enable
+
+[CUMULUS-SW2:vars]
+ansible_connection = network_cli
+ansible_network_os = eos
+ansible_user = admin
+ansible_become = yes
+ansible_become_method = enable

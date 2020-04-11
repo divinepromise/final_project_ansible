@@ -1,0 +1,20 @@
+.
+├── arista-playbook.yml
+├── ansible.cfg
+├── roles
+│   ├── eos_bgp
+│   │   ├── tasks
+│   │   └── vars
+│   ├── eos_l3_interfaces
+│   │   ├── tasks
+│   │   └── vars   
+│   └── eos_bgp
+│       ├── tasks   
+│       └── vars  
+├── inventory
+├── host_vars
+│   ├── ARISTA-SW1.yaml
+│   └── ARISTA-SW2.yaml
+├── group_vars
+│   └── arista.yaml
+└── summary_diagram2

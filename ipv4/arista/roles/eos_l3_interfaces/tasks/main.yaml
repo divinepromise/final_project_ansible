@@ -1,0 +1,16 @@
+- name: IP_ADDRESS CONFIGURATION
+  with_items: "{{ l3_interfaces }}"
+  eos_l3_interfaces:
+    config:
+      - ipv4:
+          - address: "{{ item.ip_address }}"/"{{ item.prefix }}"
+        name: "{{ item.interface_type }}{{ item.interface_id }}"
+    state: replaced
+    
+- name: BRING UP THE INTERFACES
+  with_items: "{{ all_interfaces }}"
+  eos_interfaces:
+    config:
+      - name: "{{ item.interface_type }}{{ item.interface_id }}"
+        enabled: yes
+        description: "{{ item.description }}"

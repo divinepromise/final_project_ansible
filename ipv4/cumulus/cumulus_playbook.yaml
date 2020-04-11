@@ -1,0 +1,5 @@
+---
+
+  - import_playbook: backup_playbook.yaml
+  - import_playbook: interface_configuration_playbook.yaml
+  - import_playbook: quagga_ospf_playbook.yaml

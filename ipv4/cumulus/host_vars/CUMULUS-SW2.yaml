@@ -1,0 +1,47 @@
+---
+
+interfaces:
+  - name: lo
+    auto: true
+    address: 4.4.4.4/32
+    alias: LOOPBACK_INTERFACE
+  - name: swp1
+    auto: true
+    address: 192.168.24.4/24
+    alias: INK_TO_ARISTA_SW2
+  - name: swp2
+    auto: true
+    address: 192.168.14.4/24
+    alias: LINK_TO_ARISTA_SW1
+  - name: swp3
+    auto: true
+    alias: LINK_HOST_ACCESS_PORT_1
+    bridge_access: 200
+  - name: swp4
+    auto: true
+    alias: LINK_HOST_ACCESS_PORT_2
+    bridge_access: 200
+  - name: vlan200
+    auto: true
+    address: 192.168.200.1/24
+    vlan_id: 200
+    alias: INTERFACE_VLAN200_INTERFACE
+  - name: bridge
+    bridge_vids: 200
+    alias: BRIDGE_INTERFACE
+
+
+ospf:
+  router_id: 4.4.4.4
+  networks:
+    - ipv4: 4.4.4.4/32
+      area: 0.0.0.0
+    - ipv4: 192.168.200.0/24
+      area: 0.0.0.0
+    - ipv4: 192.168.24.0/24
+      area: 0.0.0.0
+    - ipv4: 192.168.14.0/24
+      area: 0.0.0.0
+  passive_interfaces:
+    - name: swp3
+    - name: swp4

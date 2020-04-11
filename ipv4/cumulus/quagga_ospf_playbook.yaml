@@ -1,0 +1,42 @@
+---
+
+- hosts: cumulus
+
+  tasks:
+
+  - name: ENABLE ZEBRA
+    lineinfile:
+      path: /etc/frr/daemons
+      regexp: "^zebra="
+      line: "zebra=yes"   
+    
+  - name: Enable OSPF DEAMON
+    lineinfile:
+      path: /etc/frr/daemons
+      regexp: "^ospfd="
+      line: "ospfd=yes"
+  
+  - name: Enable OSPF6 DEAMON
+    lineinfile:
+      path: /etc/frr/daemons
+      regexp: "^ospf6d="
+      line: "ospf6d=yes"
+      
+  - name: START FRR SERVICE
+    systemd:
+      name: frr.service
+      state: started
+      enabled: yes
+
+  - name: Update frr configuration
+    blockinfile:
+      block: "{{ lookup('template', 'templates/ospf.j2') }}"
+      dest: "/etc/frr/frr.conf"
+    notify: Restart frr
+
+  handlers:
+
+  - name: Restart frr
+    systemd:
+      name: frr.service
+      state: restarted

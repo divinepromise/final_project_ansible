@@ -1,0 +1,8 @@
+router ospf
+  ospf router-id {{ ospf.router_id }}
+  {% for network in ospf.networks -%}
+  network {{ network.ipv4}} area {{ network.area }}
+  {% endfor -%}
+  {% for interface in ospf.passive_interfaces -%}
+  passive_interface {{ interface.name }}
+  {% endfor -%}

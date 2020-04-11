@@ -1,0 +1,9 @@
+---
+
+- name: DEPLOY_ALL_CONFIGURATIONS
+  hosts: arista
+
+  roles:
+    - eos_l3_interfaces
+    - eos_ospf
+    - eos_bgp
