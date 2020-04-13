@@ -1,5 +1,6 @@
 [cumulus]
 CUMULUS-SW1
+CUMULUS-SW2
 
 [cumulus:vars]
 ansible_user = cumulus

@@ -2,9 +2,13 @@
 
 interfaces:
   - name: lo
-    auto: true
+    auto: false
     address: 4.4.4.4/32
     alias: LOOPBACK_INTERFACE
+  - name: eth0
+    auto: true
+    address: 10.1.1.4/24
+    alias: MANAGEMENT_INTERFACE
   - name: swp1
     auto: true
     address: 192.168.24.4/24
