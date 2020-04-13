@@ -7,19 +7,19 @@
   - name: ENABLE ZEBRA
     lineinfile:
       path: /etc/frr/daemons
-      regexp: "^zebra="
+      regexp: "^zebra=no"
       line: "zebra=yes"   
     
   - name: Enable OSPF DEAMON
     lineinfile:
       path: /etc/frr/daemons
-      regexp: "^ospfd="
+      regexp: "^ospfd=no"
       line: "ospfd=yes"
   
   - name: Enable OSPF6 DEAMON
     lineinfile:
       path: /etc/frr/daemons
-      regexp: "^ospf6d="
+      regexp: "^ospf6d=no"
       line: "ospf6d=yes"
       
   - name: START FRR SERVICE

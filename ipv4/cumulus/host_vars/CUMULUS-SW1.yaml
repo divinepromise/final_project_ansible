@@ -27,6 +27,7 @@ interfaces:
     vlan_id: 100
     alias: INTERFACE_VLAN100_INTERFACE
   - name: bridge
+    auto: true
     bridge_vids: 100
     alias: BRIDGE_INTERFACE
 

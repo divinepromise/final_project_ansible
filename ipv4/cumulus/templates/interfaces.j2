@@ -1,41 +1,42 @@
 auto lo
 iface lo inet loopback
-{% for interface in interfaces -%}
-{% if interface.name == lo %}
+{% for interface in interfaces %}
+{% if interface.name == 'lo' %}
     address {{ interface.address }}
     alias {{ interface.alias }}
-{% endif -%}
-{% endfor -%}
+{% endif %}
+{% endfor %}
 
-{% for interface in interfaces -%}
-{% if interface.auto == true -%}
+{% for interface in interfaces %}
+{% if interface.auto == true %}
 auto {{ interface.name }}
-{% endif -%}
+{% endif %}
 iface {{ interface.name }}
 {% if interface.address is defined %}
     address {{ interface.address }}
-{% endif -%}
-{% if interface.alias is defined %}
+{% endif %}
+{% if interface.alias is defined -%}
     alias {{ interface.alias }}
-{% endif -%}
-{% if interface.name == swp3 %}
+{% endif %}
+{% if interface.name == 'swp3' %}
     bridge-access {{ interface.bridge_access }}
-{% endif -%}
-{% if interface.name == swp4 %}
+{% endif %}
+{% if interface.name == 'swp4' %}
     bridge-access {{ interface.bridge_access }}
-{% endif -%}
-{% if interface.name == bridge %}
+{% endif %}
+{% if interface.name == 'bridge' %}
     bridge-ports swp3 swp4
     bridge-vids {{ interface.bridge_vids }}
     bridge-vlan-aware yes
-{% endif -%}
-{% if interface.name == vlan100 %}
+{% endif %}
+{% if interface.name == 'vlan100' %}
     address {{ interface.address }}
     vlan-id {{ interface.vlan_id }}
     vlan-raw-device bridge
-{% if interface.name == vlan200 %}
+{% endif %}
+{% if interface.name == 'vlan200' %}
     address {{ interface.address }}
     vlan-id {{ interface.vlan_id }}
     vlan-raw-device bridge
-{% endif -%}
-{% endfor -%}
+{% endif %}
+{% endfor %}
