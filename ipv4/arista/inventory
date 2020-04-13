@@ -1,5 +1,6 @@
 [arista]
 ARISTA-SW1
+ARISTA-SW2
 
 [arista:vars]
 ansible_connection = network_cli
