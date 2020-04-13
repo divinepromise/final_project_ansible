@@ -28,9 +28,6 @@
                 mode: active
         state: replaced
         
-- name: DEPLOY_CONFIGURATIONS
-  hosts: arista
-    
   roles:
     - eos_l3_interfaces
     - eos_ospf

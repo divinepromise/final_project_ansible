@@ -1,14 +1,21 @@
-- name: CONFIGURE BGP
+- name: BGP NEIGHBORS
+  with_items: "{{ bgp_neighbors }}"
   eos_bgp:
     config:
-      bgp_as: "{{ bgp.asn }}"
-      router_id: "{{ bgp.router_id }}"
-      with_items: "{{ bgp.neighbors }}"
+      bgp_as: "{{ bgp_asn }}"
+      router_id: "{{ bgp_router_id }}"
       neighbors:
         - neighbor: "{{ item.neighbor }}"
           remote_as: "{{ item.remote_as }}"
           description: "{{ item.description }}"
-      with_items: "{{ bgp.networks }}"
+    operation: replace
+
+- name: BGP NETWORKS
+  with_items: "{{ bgp_networks }}"
+  eos_bgp:
+    config:
+      bgp_as: "{{ bgp_asn }}"
+      router_id: "{{ bgp_router_id }}"
       networks:
         - prefix: "{{ item.prefix }}"
           masklen: "{{ item.mask_length }}"

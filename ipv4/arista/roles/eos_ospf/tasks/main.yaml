@@ -1,13 +1,13 @@
 - name: OSPF CONFIGURATION
   eos_config:
     lines:
-      - router-id "{{ ospf.router-id }}"
+      - router-id {{ ospf_router_id }}
       - passive-interface Ethernet5
-    parents: router ospf "{{ ospf.process_id }}"
+    parents: router ospf {{ ospf_process_id }}
     
 - name: OSPF NETWORKS
-  with_items: "{{ ospf }}"
+  with_items: "{{ ospf_networks }}"
   eos_config:
     lines:
-      - network "{{ item.networks }}" area "{{item.area }}"
-    parents: router ospf "{{ ospf.process_id }}"
+      - network {{ item }} area {{ ospf_area }}
+    parents: router ospf {{ ospf_process_id }}
