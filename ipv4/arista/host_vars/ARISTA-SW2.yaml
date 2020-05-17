@@ -1,5 +1,4 @@
-ospf:
-  - networks:
+ospf_networks:
       - 192.168.12.2/24
       - 192.168.23.2/24
       - 192.168.24.2/24
@@ -18,15 +17,6 @@ bgp_neighbors:
 bgp_networks:
     - prefix: 2.2.2.2
       mask_length: 32
-
-
-l2_interfaces:
-  - interface_type: Ethernet
-    interface_id: 1
-    description: PORT-CHANNEL INTERFACE TO ARISTA-SW1
-  - interface_type: Ethernet
-    interface_id: 2
-    description: PORT-CHANNEL INTERFACE TO ARISTA-SW1
 
 l3_interfaces:
   - interface_type: Loopback
@@ -67,7 +57,7 @@ all_interfaces:
   - interface_type: Ethernet
     interface_id: 2
     description: PORT-CHANNEL INTERFACE TO ARISTA-SW1
-- interface_type: Loopback
+  - interface_type: Loopback
     interface_id: 0
     description: LOOPBACK INTERFACE
     ip_address: 2.2.2.2

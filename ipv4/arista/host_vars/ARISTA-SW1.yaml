@@ -18,14 +18,6 @@ bgp_networks:
     - prefix: 1.1.1.1
       mask_length: 32
 
-l2_interfaces:
-  - interface_type: Ethernet
-    interface_id: 1
-    description: PORT-CHANNEL INTERFACE TO ARISTA-SW2
-  - interface_type: Ethernet
-    interface_id: 2
-    description: PORT-CHANNEL INTERFACE TO ARISTA-SW2
-
 l3_interfaces:
   - interface_type: Loopback
     interface_id: 0
