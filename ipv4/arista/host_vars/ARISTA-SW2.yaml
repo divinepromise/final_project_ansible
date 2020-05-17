@@ -12,7 +12,7 @@ ospf_area: 0
 bgp_asn: 65535
 bgp_router_id: 2.2.2.2
 bgp_neighbors:
-  - neighbor: 150.2.150.1
+  - neighbor: 150.2.150.100
     description: EBGP_PEER_ISP
     remote_as: 150
 bgp_networks:
