@@ -2,7 +2,7 @@ ospf_networks:
       - 192.168.12.2/24
       - 192.168.23.2/24
       - 192.168.24.2/24
-      - 150.2.150.1/24
+      - 150.2.150.2/24
       - 2.2.2.2/32
 ospf_process_id: 1
 ospf_router_id: 2.2.2.2
@@ -37,7 +37,7 @@ l3_interfaces:
   - interface_type: Ethernet
     interface_id: 5
     description: INTERFACE TO ISP
-    ip_address: 150.2.150.1
+    ip_address: 150.2.150.2
     prefix: 24
   - interface_type: Port-Channel
     interface_id: 1
@@ -75,7 +75,7 @@ all_interfaces:
   - interface_type: Ethernet
     interface_id: 5
     description: INTERFACE TO ISP
-    ip_address: 150.2.150.1
+    ip_address: 150.2.150.2
     prefix: 24
   - interface_type: Port-Channel
     interface_id: 1
